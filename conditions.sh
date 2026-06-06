@@ -1,6 +1,6 @@
 #!/bin/bash
 
-number=$1
+NUMBER=$1
 if [ $NUMBER -gt 30 ]; then
     echo "given number $NUMBER is greater than 30"
 elif [ $NUMBER -eq 30 ]; then
