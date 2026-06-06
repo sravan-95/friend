@@ -19,12 +19,12 @@ value(){
 
 
 
-dnf list installed mysql  &>> $LOGS_FILE
+dnf list installed mysql &>> $LOGS_FILE
 if [ $? -eq 0 ]; then
   echo "mysql is already installed"
   else
       echo "installing mysql"
-      dnf install mysql -y  &>> $LOGS_FILE
+      dnf install mysql -y &>> $LOGS_FILE
       value mysql $?
 fi
 
@@ -34,7 +34,7 @@ if [ $? -eq 0 ]; then
     echo "nginx is already installed"
     else
         echo "installing nginx"
-        dnf install nginx -y  &>> $LOGS_FILE 
+        dnf install nginx -y &>> $LOGS_FILE 
           value nginx $?
 fi 
 
