@@ -1,5 +1,8 @@
 #!/bin/bash
 USERID=$(id -u)
+LOGS_DIR=/root/shell-logs
+LOGS_FILE="$LOGS_DIR/$0.log"
+
 if [ $USERID -ne 0 ];then
 echo "please run the script with root access"
 exit 1
@@ -16,22 +19,23 @@ value(){
 
 
 
-dnf list installed mysql
+dnf list installed mysql  &>> $LOGS_FILE
 if [ $? -eq 0 ]; then
   echo "mysql is already installed"
   else
       echo "installing mysql"
-      dnf install mysql -y
+      dnf install mysql -y  &>> $LOGS_FILE
       value mysql $?
 fi
 
 
-dnf list installed nginx
+dnf list installed nginx &>> $LOGS_FILE
 if [ $? -eq 0 ]; then
     echo "nginx is already installed"
     else
         echo "installing nginx"
-        dnf install nginx -y
+        dnf install nginx -y  &>> $LOGS_FILE 
           value nginx $?
-          echo "nginx is installed successfully"
 fi 
+
+
