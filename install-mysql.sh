@@ -11,9 +11,8 @@ echo "mysql is not installed"
 else
 echo "install mysql"
 dnf install mysql -y
-fi
 if [ $? -eq 0 ]; then
 echo "install mysql"
 else 
-echo "mysql installation failed"
+echo "mysql installation failed "
 fi
