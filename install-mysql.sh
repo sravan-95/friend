@@ -33,4 +33,5 @@ if [ $? -eq 0 ]; then
         echo "installing nginx"
         dnf install nginx -y
           value nginx $?
+          echo "nginx is installed successfully"
 fi 
