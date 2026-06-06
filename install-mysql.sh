@@ -16,3 +16,4 @@ echo "install mysql"
 else 
 echo "mysql installation failed "
 fi
+fi
