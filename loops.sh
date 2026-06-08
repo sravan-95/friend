@@ -18,7 +18,7 @@ value(){
       echo -e "$timestamp $1 installation $R failed $N" | tee -a $LOGS_FILE
       exit 1
       else 
-      echo -e"$timestamp installing $1 is $G successful $N" | tee -a $LOGS_FILE
+      echo -e "$timestamp installing $1 is $G successful $N" | tee -a $LOGS_FILE
     fi
 }
 
@@ -31,6 +31,6 @@ do
          dnf install $package -y &>> $LOGS_FILE
          value "installing $package" $?
       else  
-           echo -e"$timestamp $package is $Y already installed $N" | tee -a $LOGS_FILE 
+           echo -e "$timestamp $package is $Y already installed $N" | tee -a $LOGS_FILE 
       fi  
 done
