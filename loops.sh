@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 USERID=$(id -u)
 LOGS_DIR=/var/log/shell-script
 LOGS_FILE="$LOGS_DIR/$0.log"
@@ -7,6 +8,8 @@ timestamp=$(date "+%Y-%m-%d %H:%M:%S")
  G="\e[32m"
  Y="\e[33m"
  N="\e[0m"
+
+ trap 'echo "error at $LINENO", command: $bash_command"' ERR
 
 if [ $USERID -ne 0 ];then
 echo "please run the script with root access"
